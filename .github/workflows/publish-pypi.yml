@@ -1,0 +1,31 @@
+name: Publish Python Packages to PyPI
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Package directory under packages/ (swanlabs or swanlabs-sdk)"
+        required: true
+        default: "swanlabs"
+        type: choice
+        options:
+          - swanlabs
+          - swanlabs-sdk
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Build package
+        working-directory: packages/${{ inputs.package }}
+        run: uv build --no-sources
+      - name: Publish to PyPI via Trusted Publishing
+        working-directory: packages/${{ inputs.package }}
+        run: uv publish
