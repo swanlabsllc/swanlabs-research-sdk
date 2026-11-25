@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "swanlabs-sdk"
+version = "0.0.1"
+description = "Official public Python SDK for Swan Labs, LLC verification and telemetry APIs (https://swanlabs.si)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+  { name = "Swan Labs, LLC", email = "info@swanlabs.si" }
+]
+keywords = ["swanlabs", "sdk", "verification", "telemetry", "mathematics"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://swanlabs.si"
+Documentation = "https://swanlabs.si"
+Support = "https://swanlabs.si/#contact"
